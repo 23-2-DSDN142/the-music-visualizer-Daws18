@@ -5,26 +5,23 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   //rectMode(CENTER)
   ellipseMode(CENTER)
   textSize(24);
+
+  strokeWeight(3)
+  stroke(drum,80,80) 
   
-
-
-  let purple = color(147, 8, 194)
-  let blue = color(48, 68, 194)
-  let middleColor = lerpColor(purple,blue,0.6)
+  let bassMap =map(bass,0,100,30,90)
+  let lenghtOfLine = 30;
+  let LineStart = 100;
+  let lineEnd = LineStart+lenghtOfLine;
+   
+  
+for(let i =1; i <= bassMap; i++) {
+  let lineStep = i*10;
+  line(LineStart, lineStep, lineEnd, lineStep);
+ 
 
 }
 
-  let otherMap =map(other,0,100,5,7);
-  let lenghtOfLine = 300;
-  let LineStart = 100
-  let lineEnd = LineStart+lenghtOfLine;
-
-  stroke(purple)
-  strokeWeight(3)
-for(var i=1; 1 <5; i++){
-  let lineStep = i*100;
-  line(LineStart,lineStep, lineEnd,lineStep)
- 
 
 
   // var ballSize= 70;
