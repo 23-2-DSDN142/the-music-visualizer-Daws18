@@ -6,18 +6,32 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipseMode(CENTER)
   textSize(24);
 
-  strokeWeight(3)
-  stroke(drum,80,80) 
+
+  volumeBar(bass,color(240, 34, 19),color(240, 137, 19),0)//red to orange maping bass
+  volumeBar(drum,color(19, 240, 63),color(19, 100, 240),100)//green to blue maping drum
+  volumeBar(vocal,color(19, 240, 63),color(19, 100, 240),150)//green to blue maping vocal
+  volumeBar(other,color(19, 240, 63),color(19, 100, 240),300)//green to blue maping drum
+
+}
+function volumeBar(track, softColor, brightColor, xPosition){
+
+  let color1 = softColor;//color(237, 19, 19)red
+  let color2 = brightColor;//color(237, 113, 19)orange
+
+  let volumeMapForColor = map(track,0,100,0,1);
+  let strokeColor = lerpColor(color1, color2, volumeMapForColor);
+  strokeWeight(3);
+  stroke(strokeColor);
   
-  let bassMap =map(bass,0,100,30,90)
+  let volumeMapForLines =map(track,0,100,30,90)
   let lenghtOfLine = 30;
-  let LineStart = 100;
-  let lineEnd = LineStart+lenghtOfLine;
+  let lineStart = 100;
+  let lineEnd = lineStart+lenghtOfLine;
    
   
-for(let i =1; i <= bassMap; i++) {
+for(let i =1; i <= volumeMapForLines; i++) {
   let lineStep = i*10;
-  line(LineStart, lineStep, lineEnd, lineStep);
+  line(lineStart + xPosition, lineStep, lineEnd + xPosition, lineStep);
  
 
 }
