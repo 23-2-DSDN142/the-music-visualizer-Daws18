@@ -24,11 +24,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textSize(24);
 
   // console.log(song.currentTime())
-  fill(255)
-  text(song.currentTime(), width / 2, height / 3);
+   fill(255)
+   text(song.currentTime(), width / 2, height / 3);
   //start of song 
-
-  if (song.currentTime() < 49 || song.currentTime() > 73) {
+  if (song.currentTime() < 107.5 || song.currentTime() > 135) {
+  if (song.currentTime() < 53.5 || song.currentTime() > 73) {
     if (song.currentTime() > 0 && song.currentTime() < 16.5) {
       volumeBar(bass, color(0), color(255), 0) //black to white maping bass
       volumeBar(drum, color(0), color(255), 85) //black to white maping drum
@@ -75,20 +75,38 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
     }
   }
+}
+else {
+  drawBullet(bullet1x, bullet1y); //first bullet 
+  bullet1x = bullet1x +5;
+  if (bullet1x > width) {
+    bullet1x = -100;
+
+  }
+
+  drawBullet(bullet2x, bullet2y); 
+  bullet2x = bullet2x +5;
+  if (bullet2x > width) {
+    bullet2x = -150;
+
+  }
+
+  drawBullet(bullet3x, bullet3y); 
+  bullet3x = bullet3x +5;
+  if (bullet3x > width) {
+    bullet3x = -200;
+
+  }
+
+
+  drawBullet(bullet4x, bullet4y); 
+  bullet4x = bullet4x +5;
+  if (bullet4x > width) {
+    bullet4x = -500;
+
+  }
+}
   
-
-  //if statment to pause music 
-  // if(song.currentTime() > 53&&song.currentTime() <70){
-
-
-  // }
-  // else {
-  // volumeBar(bass,color(240, 34, 19),color(240, 137, 19),0)//red to orange maping bass
-  // volumeBar(drum,color(19, 240, 63),color(19, 100, 240),85)//green to blue maping drum
-  // volumeBar(vocal,color(237, 26, 223),color(116, 25, 227),170)//pink to purple maping vocal
-  // volumeBar(other,color(0),color(255),250)//balck to white maping other
-
-  // }
 
 }
 
