@@ -1,4 +1,4 @@
-let bullet;
+
 let firstrun = true
 let bullet1x = -100
 let bullet1y = 100
@@ -118,7 +118,7 @@ function drawBullet(x, y) {
   pop()
 }
 
-
+//equalizer bars function alls me to draw multiple in different positions
 function volumeBar(track, softColor, brightColor, xPosition) {
 
   let color1 = softColor; //color(237, 19, 19)red
