@@ -24,10 +24,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textSize(24);
 
   // console.log(song.currentTime())
-   fill(255)
-   text(song.currentTime(), width / 2, height / 3);
+  //  fill(255)
+  //  text(song.currentTime(), width / 2, height / 3);
   //start of song 
-  if (song.currentTime() < 107.5 || song.currentTime() > 135) {
+  if (song.currentTime() < 108.5 || song.currentTime() > 135) {
   if (song.currentTime() < 53.5 || song.currentTime() > 73) {
     if (song.currentTime() > 0 && song.currentTime() < 16.5) {
       volumeBar(bass, color(0), color(255), 0) //black to white maping bass
