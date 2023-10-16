@@ -27,9 +27,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   //  fill(255)
   //  text(song.currentTime(), width / 2, height / 3);
   //start of song 
-  if (song.currentTime() < 108.5 || song.currentTime() > 135) {
-  if (song.currentTime() < 53.5 || song.currentTime() > 73) {
-    if (song.currentTime() > 0 && song.currentTime() < 16.5) {
+  if (song.currentTime() < 108.5 || song.currentTime() > 135) { // turns of volume bars and plays image sequence on loop
+  if (song.currentTime() < 53.5 || song.currentTime() > 73) { // turns of volume bars and plays image sequence on loop
+    if (song.currentTime() > 0 && song.currentTime() < 16.5) { // changes colour of voulme bars
       volumeBar(bass, color(0), color(255), 0) //black to white maping bass
       volumeBar(drum, color(0), color(255), 85) //black to white maping drum
       volumeBar(vocal, color(0), color(255), 170) //black to white maping vocal
@@ -53,14 +53,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
     }
 
-    drawBullet(bullet2x, bullet2y); 
+    drawBullet(bullet2x, bullet2y); // second bullet
     bullet2x = bullet2x +5;
     if (bullet2x > width) {
       bullet2x = -150;
 
     }
 
-    drawBullet(bullet3x, bullet3y); 
+    drawBullet(bullet3x, bullet3y); // third bullet
     bullet3x = bullet3x +5;
     if (bullet3x > width) {
       bullet3x = -200;
@@ -68,14 +68,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     }
 
 
-    drawBullet(bullet4x, bullet4y); 
+    drawBullet(bullet4x, bullet4y); // forth bullet 
     bullet4x = bullet4x +5;
     if (bullet4x > width) {
       bullet4x = -500;
 
     }
   }
-}
+} //second image sequence  
 else {
   drawBullet(bullet1x, bullet1y); //first bullet 
   bullet1x = bullet1x +5;
@@ -84,14 +84,14 @@ else {
 
   }
 
-  drawBullet(bullet2x, bullet2y); 
+  drawBullet(bullet2x, bullet2y); // second bullet
   bullet2x = bullet2x +5;
   if (bullet2x > width) {
     bullet2x = -150;
 
   }
 
-  drawBullet(bullet3x, bullet3y); 
+  drawBullet(bullet3x, bullet3y); // third bullet
   bullet3x = bullet3x +5;
   if (bullet3x > width) {
     bullet3x = -200;
@@ -99,7 +99,7 @@ else {
   }
 
 
-  drawBullet(bullet4x, bullet4y); 
+  drawBullet(bullet4x, bullet4y); // forth bullet 
   bullet4x = bullet4x +5;
   if (bullet4x > width) {
     bullet4x = -500;
@@ -107,10 +107,9 @@ else {
   }
 }
   
-
 }
 
-function drawBullet(x, y) {
+function drawBullet(x, y) { // function allows me to draw multiple bullets 
   push()
   translate(x, y) // Position of top left corner
   scale(0.5) // Scale of image
