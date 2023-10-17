@@ -37,10 +37,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
     } else {
-      volumeBar(bass, color(240, 34, 19), color(240, 137, 19), 0) //red to orange maping bass
-      volumeBar(drum, color(19, 240, 63), color(19, 100, 240), 85) //green to blue maping drum
+      volumeBar(bass, color(105, 16, 230), color(235, 16, 227), 0) //purple to pink maping bass
+      volumeBar(drum, color(255, 115, 250), color(48, 23, 235), 85) //pink to blue maping drum
       volumeBar(vocal, color(237, 26, 223), color(116, 25, 227), 170) //pink to purple maping vocal
-      volumeBar(other, color(0), color(255), 250) //balck to white maping other
+      volumeBar(other, color(240, 74, 187), color(237, 161, 213), 250) //pink to light pink maping other
     }
 
 
