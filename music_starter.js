@@ -1,4 +1,4 @@
-
+//start position of each bullet 
 let firstrun = true
 let bullet1x = -100
 let bullet1y = 100
@@ -17,19 +17,15 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     
     firstrun = false
   }
-  background(20)
+  background(0)
   textFont('Helvetica'); // please use CSS safe fonts
   //rectMode(CENTER)
   ellipseMode(CENTER)
   textSize(24);
 
-  // console.log(song.currentTime())
-  //  fill(255)
-  //  text(song.currentTime(), width / 2, height / 3);
-  //start of song 
   if (song.currentTime() < 108.5 || song.currentTime() > 135) { // turns of volume bars and plays image sequence on loop
-  if (song.currentTime() < 53.5 || song.currentTime() > 73) { // turns of volume bars and plays image sequence on loop
-    if (song.currentTime() > 0 && song.currentTime() < 16.5) { // changes colour of voulme bars
+    if (song.currentTime() < 53.5 || song.currentTime() > 73) { // turns of volume bars and plays image sequence on loop
+      if (song.currentTime() > 0 && song.currentTime() < 16.5) { // changes colour of voulme bars
       volumeBar(bass, color(0), color(255), 0) //black to white maping bass
       volumeBar(drum, color(0), color(255), 85) //black to white maping drum
       volumeBar(vocal, color(0), color(255), 170) //black to white maping vocal
