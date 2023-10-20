@@ -120,17 +120,17 @@ function volumeBar(track, softColor, brightColor, xPosition) {
   let color2 = brightColor; //color(237, 113, 19)orange
 
   let volumeMapForColor = map(track, 0, 100, 0, 1); 
-  let strokeColor = lerpColor(color1, color2, volumeMapForColor);//lets volume bar colour go  
-  strokeWeight(5);
-  stroke(strokeColor);
+  let strokeColor = lerpColor(color1, color2, volumeMapForColor);//lets volume bar colour go from one colour to another depending on intensity of volume  
+  strokeWeight(5); //size of lines 
+  stroke(strokeColor);// colour of lines 
 
-  let volumeMapForLines = map(track, 0, 100, 30, 90)
+  let volumeMapForLines = map(track, 0, 100, 30, 90) 
   let lenghtOfLine = 60; //50
   let lineStart = 100;
   let lineEnd = lineStart + lenghtOfLine;
 
 
-  for (let i = 1; i <= volumeMapForLines; i++) {
+  for (let i = 1; i <= volumeMapForLines; i++) {//for loop for volume bar function 
     let lineStep = i * 10;
     line(lineStart + xPosition, lineStep, lineEnd + xPosition, lineStep);
 
