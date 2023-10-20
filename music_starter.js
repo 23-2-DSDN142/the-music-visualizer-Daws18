@@ -17,7 +17,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     
     firstrun = false
   }
-  background(0)
+  background(0)//background colour 
   textFont('Helvetica'); // please use CSS safe fonts
   //rectMode(CENTER)
   ellipseMode(CENTER)
@@ -25,7 +25,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   if (song.currentTime() < 108.5 || song.currentTime() > 135) { // turns of volume bars and plays image sequence on loop
     if (song.currentTime() < 53.5 || song.currentTime() > 73) { // turns of volume bars and plays image sequence on loop
-      if (song.currentTime() > 0 && song.currentTime() < 16.5) { // changes colour of voulme bars
+      if (song.currentTime() > 0 && song.currentTime() < 16.5) { // changes colour of voulme bars from white and black to the coloured version 
       volumeBar(bass, color(0), color(255), 0) //black to white maping bass
       volumeBar(drum, color(0), color(255), 85) //black to white maping drum
       volumeBar(vocal, color(0), color(255), 170) //black to white maping vocal
@@ -119,7 +119,7 @@ function volumeBar(track, softColor, brightColor, xPosition) {
   let color1 = softColor; //color(237, 19, 19)red
   let color2 = brightColor; //color(237, 113, 19)orange
 
-  let volumeMapForColor = map(track, 0, 100, 0, 1);
+  let volumeMapForColor = map(track, 0, 100, 0, 1); 
   let strokeColor = lerpColor(color1, color2, volumeMapForColor);
   strokeWeight(5);
   stroke(strokeColor);
