@@ -28,7 +28,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       if (song.currentTime() > 0 && song.currentTime() < 16.5) { // changes colour of voulme bars from white and black to the coloured version 
       volumeBar(bass, color(0), color(255), 0) //black to white maping bass
       volumeBar(drum, color(0), color(255), 85) //black to white maping drum
-      volumeBar(vocal, color(0), color(255), 170) //black to white maping vocal
+      volumeBar(vocal, color(0), color(255), 169) //black to white maping vocal
       volumeBar(other, color(0), color(255), 250) //balck to white maping other
 
 
@@ -120,12 +120,12 @@ function volumeBar(track, softColor, brightColor, xPosition) {
   let color2 = brightColor; //color(237, 113, 19)orange
 
   let volumeMapForColor = map(track, 0, 100, 0, 1); 
-  let strokeColor = lerpColor(color1, color2, volumeMapForColor);
+  let strokeColor = lerpColor(color1, color2, volumeMapForColor);//lets volume bar colour go  
   strokeWeight(5);
   stroke(strokeColor);
 
   let volumeMapForLines = map(track, 0, 100, 30, 90)
-  let lenghtOfLine = 50;
+  let lenghtOfLine = 60; //50
   let lineStart = 100;
   let lineEnd = lineStart + lenghtOfLine;
 
